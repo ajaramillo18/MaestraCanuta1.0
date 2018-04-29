@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jama.maestracanuta10">
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".StudentListActivity"
+            android:label="@string/title_student_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StudentDetailActivity"
+            android:label="@string/title_student_detail"
+            android:parentActivityName=".StudentListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jama.maestracanuta10.StudentListActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".NewStudentActivity" />
+        <activity android:name=".MisconductActivity" />
+        <activity android:name=".EditStudentActivity"></activity>
+    </application>
+
+</manifest>
