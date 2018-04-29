@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listButton.setOnClickListener(this);
         adminButton.setOnClickListener(this);
         configButton.setOnClickListener(this);
-        misconductButton.setOnClickListener(this);
+        misconductButton.setOnClickListener(this);//
     }
 
     @Override
