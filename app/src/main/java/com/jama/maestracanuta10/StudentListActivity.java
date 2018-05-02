@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.jama.maestracanuta10.dummy.DummyContent;
@@ -44,12 +45,15 @@ public class StudentListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.NewStudentId);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                Intent intentAdd = new Intent(StudentListActivity.this, NewStudentActivity.class);
+                startActivity(intentAdd);
+                Toast.makeText(StudentListActivity.this, "Config", Toast.LENGTH_LONG).show();
+
             }
         });
 

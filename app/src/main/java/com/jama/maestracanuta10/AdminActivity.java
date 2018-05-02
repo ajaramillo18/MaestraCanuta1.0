@@ -13,6 +13,8 @@ import com.jama.maestracanuta10.model.Event;
 
 import java.util.List;
 
+
+// This class is not used anymore, these features were moved to the student list activity
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button buttonAdd;

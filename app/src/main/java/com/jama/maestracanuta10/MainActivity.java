@@ -11,7 +11,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button listButton;
-    private Button adminButton;
+   //this featured was moved to the student list
+    // private Button adminButton;
     private Button configButton;
     private Button misconductButton;
     @Override
@@ -22,13 +23,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         listButton = (Button) findViewById(R.id.List_button_Id);
-        adminButton = (Button) findViewById(R.id.Adimn_button_Id);
+        //this featured was moved to the student list
+        //adminButton = (Button) findViewById(R.id.Adimn_button_Id);
         configButton = (Button) findViewById(R.id.Config_button_Id);
-        misconductButton = (Button) findViewById(R.id.Misconduct_button_Id);
+        misconductButton = (Button) findViewById(R.id.Misconduct_List_button_Id);
 
 
         listButton.setOnClickListener(this);
-        adminButton.setOnClickListener(this);
+       //this featured was moved to the student list
+        // adminButton.setOnClickListener(this);
         configButton.setOnClickListener(this);
         misconductButton.setOnClickListener(this);//
     }
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, "List", Toast.LENGTH_LONG).show();
                 break;
 
+                /* this featured was moved to the student list
             case R.id.Adimn_button_Id:
                 //go to admin activity
                 Intent adminIntent = new Intent(MainActivity.this, AdminActivity.class);
@@ -52,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(adminIntent);
                 Toast.makeText(MainActivity.this, "Admin", Toast.LENGTH_LONG).show();
                 break;
-
+            */
 
             case R.id.Config_button_Id:
                 //go to config activity
@@ -62,9 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, "Config", Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.Misconduct_button_Id:
+            case R.id.Misconduct_List_button_Id:
                 //go to config activity
-                Intent misconductIntent = new Intent(MainActivity.this, MisconductListActivity.class);
+                Intent misconductIntent = new Intent(MainActivity.this, SettingsActivity.class);
                 // configIntent.putExtra("name", "Armando");
                 startActivity(misconductIntent);
                 Toast.makeText(MainActivity.this, "misconduct list", Toast.LENGTH_LONG).show();
