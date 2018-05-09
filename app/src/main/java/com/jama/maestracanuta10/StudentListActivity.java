@@ -37,6 +37,19 @@ public class StudentListActivity extends AppCompatActivity {
     private boolean mTwoPane;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        DummyContent.ReloadStudents();
+
+        View recyclerView = findViewById(R.id.student_list);
+        assert recyclerView != null;
+        setupRecyclerView((RecyclerView) recyclerView);
+        Toast.makeText(StudentListActivity.this, "now", Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list);
@@ -71,6 +84,9 @@ public class StudentListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
+        //TODO here the Items are loaded from the static variable ITEMS,
+        // maybe here we should go to the database and retrieve the list
+        // in order to fix the problem with refreshing the student list when a change to the data is done
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(DummyContent.ITEMS));
     }
 
