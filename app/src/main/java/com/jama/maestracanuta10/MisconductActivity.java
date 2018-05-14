@@ -3,8 +3,11 @@ package com.jama.maestracanuta10;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -126,11 +129,19 @@ public class MisconductActivity extends AppCompatActivity implements View.OnClic
 
         db.addEvent(event);
 
-      //  Toast.makeText(MisconductActivity.this, "graba: " + misconduct, Toast.LENGTH_LONG).show();
 
-        sendSMS();
+        //the message is sent only when the user configure it
 
-        Toast.makeText(MisconductActivity.this, "Mensaje enviado: " + misconduct, Toast.LENGTH_LONG).show();
+        boolean send  = false;
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        send = preferences.getBoolean("notifications_parent",false);
+        Log.d("Misconduct", "notifications_parent: " + send);
+
+
+        if(send){
+            sendSMS();
+            Toast.makeText(MisconductActivity.this, "Mensaje enviado: " + misconduct, Toast.LENGTH_LONG).show();
+        }
 
         //finish();
 

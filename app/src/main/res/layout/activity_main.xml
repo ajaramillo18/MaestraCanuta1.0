@@ -22,9 +22,10 @@
         app:layout_constraintVertical_bias="0.476" />
 
     <TextView
+        android:id="@+id/WelcomeID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenid@"
+        android:text="@string/welcome_id_value"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -47,10 +48,22 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:id="@+id/Config_button_Id"
+        android:id="@+id/Reports_button_Id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="172dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/Reports_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/config_button_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/Config_button"
