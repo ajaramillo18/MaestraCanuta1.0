@@ -86,5 +86,8 @@
     <string name="Reports_button">Reportes</string>
     <string name="ReportesTitle">Reportes</string>
     <string name="welcome_id_value">Bienvenid@</string>
+    <string name="title_misconduct_list">Misconducts</string>
+    <string name="title_misconduct_detail">Misconduct Detail</string>
+    <string name="TypeText">Tipo</string>
     Delete_success
 </resources>

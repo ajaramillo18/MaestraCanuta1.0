@@ -6,7 +6,7 @@ package com.jama.maestracanuta10.util;
 
 public class Constants {
 
-    public static final int DB_VERSION = 3;
+    public static final int DB_VERSION = 4;
     public static final String DB_NAME = "maestraCanutaDB";
     public static final String TABLE_NAME = "student";
 

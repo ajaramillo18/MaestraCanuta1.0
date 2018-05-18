@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jama.maestracanuta10.misconducts.MisconductListActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button listButton;
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.Misconduct_List_button_Id:
                 //go to config activity
-                Intent misconductIntent = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent misconductIntent = new Intent(MainActivity.this, MisconductListActivity.class);
                 // configIntent.putExtra("name", "Armando");
                 startActivity(misconductIntent);
                 Toast.makeText(MainActivity.this, "misconduct list", Toast.LENGTH_LONG).show();

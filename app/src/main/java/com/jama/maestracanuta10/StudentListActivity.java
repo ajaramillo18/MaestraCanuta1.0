@@ -65,7 +65,7 @@ public class StudentListActivity extends AppCompatActivity {
 
                 Intent intentAdd = new Intent(StudentListActivity.this, NewStudentActivity.class);
                 startActivity(intentAdd);
-                Toast.makeText(StudentListActivity.this, "Config", Toast.LENGTH_LONG).show();
+                Toast.makeText(StudentListActivity.this, "add", Toast.LENGTH_LONG).show();
 
             }
         });

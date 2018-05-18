@@ -39,7 +39,21 @@
         <activity android:name=".NewStudentActivity" />
         <activity android:name=".MisconductActivity" />
         <activity android:name=".EditStudentActivity" />
-        <activity android:name=".ReportsActivity"></activity>
+        <activity android:name=".ReportsActivity" />
+        <activity
+            android:name=".misconducts.MisconductListActivity"
+            android:label="@string/title_misconduct_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".misconducts.MisconductDetailActivity"
+            android:label="@string/title_misconduct_detail"
+            android:parentActivityName=".misconducts.MisconductListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jama.maestracanuta10.misconducts.MisconductListActivity" />
+        </activity>
+        <activity android:name=".misconducts.NewMisconductActivity"></activity>
     </application>
 
 </manifest>

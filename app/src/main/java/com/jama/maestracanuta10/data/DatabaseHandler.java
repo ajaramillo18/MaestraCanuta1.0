@@ -52,6 +52,13 @@ DatabaseHandler extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_EVENT_TABLE);
 
+        String CREATE_MISCONDUCT_TABLE = "CREATE TABLE IF NOT EXISTS " + Constants.MISCONDUCT_TABLE_NAME + " ("
+                + Constants.MISCONDUCT_ID + " INTEGER PRIMARY KEY,"
+                + Constants.MISCONDUCT_NAME + " TEXT,"
+                + Constants.MISCONDUCT_TYPE + " TEXT);";
+
+        db.execSQL(CREATE_MISCONDUCT_TABLE);
+
 
     }
 
@@ -211,7 +218,7 @@ DatabaseHandler extends SQLiteOpenHelper {
 
 
 
-    //Get count
+    //Get Student count
     public int getStudentsCount() {
         String countQuery = "SELECT * FROM " + Constants.TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -315,7 +322,8 @@ DatabaseHandler extends SQLiteOpenHelper {
             db = this.getWritableDatabase();
 
             ContentValues values = new ContentValues();
-            values.put(Constants.MISCONDUCT_ID, misconduct.getId());
+            // Autoincremented, no needed
+           // values.put(Constants.MISCONDUCT_ID, misconduct.getId());
             values.put(Constants.MISCONDUCT_NAME, misconduct.getName());
             values.put(Constants.MISCONDUCT_TYPE, misconduct.getType());
 
@@ -398,7 +406,34 @@ DatabaseHandler extends SQLiteOpenHelper {
         return misconductList;
     }
 
+    //Get Misconduct count
+    public int getMisconductsCount() {
+        String countQuery = "SELECT * FROM " + Constants.MISCONDUCT_TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(countQuery, null);
+
+        return cursor.getCount() ;
+    }
 
 
+    //TODO implement an status field in the student table so the records are marked as "DELETED" and in this way not delete them for good
+    public void deleteMisconduct(String id){
+
+        SQLiteDatabase db = null;
+
+        try {
+            db = this.getWritableDatabase();
+
+            db.delete(Constants.MISCONDUCT_TABLE_NAME, Constants.MISCONDUCT_ID + " = ?",
+                    new String[] {id});
+        }
+        catch (Exception e) {
+            Log.e(this.getClass().toString(),"error deleting misconduct"+ e.getMessage());
+        }
+
+        Log.d("Misconduct Deleted", "Deleted from DB:" + id);
+
+    }
 
 }
