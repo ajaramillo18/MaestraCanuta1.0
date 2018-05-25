@@ -43,7 +43,7 @@ public class MisconductDetailActivity extends AppCompatActivity implements View.
         misconductButton = (FloatingActionButton) findViewById(R.id.MisconductButtonId);
         misconductButton.setOnClickListener(this);
 
-        //get student id
+        //get misconduct id
         misconductId = getIntent().getStringExtra(MisconductDetailFragment.ARG_ITEM_ID);
 
         // Show the Up button in the action bar.
@@ -140,7 +140,7 @@ public class MisconductDetailActivity extends AppCompatActivity implements View.
             case R.id.MisconductButtonId:
 
                 Toast.makeText(MisconductDetailActivity.this, "Faltas...", Toast.LENGTH_LONG).show();
-
+                // TODO  PENDIENTE ENVIAR A ESCOGER ALUMNOS
                 Intent intentMisconduct = new Intent(MisconductDetailActivity.this, MisconductDetailActivity.class);
                 intentMisconduct.putExtra("misconductId", misconductId);
                 startActivity(intentMisconduct);

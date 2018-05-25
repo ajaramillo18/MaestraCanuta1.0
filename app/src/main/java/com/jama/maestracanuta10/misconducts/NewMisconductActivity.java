@@ -33,12 +33,15 @@ public class NewMisconductActivity extends AppCompatActivity {
 
                 EditText id = null;//(EditText) findViewById(R.id.IdTextId);
                 EditText name = (EditText) findViewById(R.id.NameMisconductTextId);
-                EditText type = (EditText) findViewById(R.id.TypeTextId);
 
+                //TODO only Negative misconducts for now
+                // EditText type = (EditText) findViewById(R.id.TypeTextId);
+                //String sType = type.getText().toString();
+                String sType = "N";
 
                 newMisconduct =  new Misconduct(null,
                         name.getText().toString(),
-                        type.getText().toString());
+                        sType);
 
                 db = new DatabaseHandler(getApplicationContext());
                 db.addMisconduct(newMisconduct);

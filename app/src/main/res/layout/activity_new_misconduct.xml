@@ -36,6 +36,7 @@
         android:ems="10"
         android:hint="@string/TypeText"
         android:inputType="textPersonName"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.359"
         app:layout_constraintLeft_toLeftOf="parent"

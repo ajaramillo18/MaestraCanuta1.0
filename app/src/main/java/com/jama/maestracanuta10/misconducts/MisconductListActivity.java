@@ -38,6 +38,19 @@ public class MisconductListActivity extends AppCompatActivity {
     private boolean mTwoPane;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        DummyContent.ReloadMisconducts();
+
+        View recyclerView = findViewById(R.id.misconduct_list);
+        assert recyclerView != null;
+        setupRecyclerView((RecyclerView) recyclerView);
+        Toast.makeText(MisconductListActivity.this, "now", Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_misconduct_list);

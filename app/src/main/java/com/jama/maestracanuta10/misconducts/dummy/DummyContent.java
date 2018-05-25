@@ -45,7 +45,7 @@ public class DummyContent {
 
     public static void ReloadMisconducts() {
         misconductList = db.getAllMisconducts();
-        COUNT = db.getStudentsCount();
+        COUNT = db.getMisconductsCount();
         ITEMS = new ArrayList<DummyItem>();
         ITEM_MAP = new HashMap<String, DummyItem>();
 
